@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Editor de memes</title>
+</head>
+<body>
+    <header>
+        <h1>Editor de Memes</h1>
+        <nav>
+            <ul>
+                <li id="lista-imagen">Imagen</li>
+                <li id="lista-texto">Texto</li>
+                <li>Modo oscuro</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <article class="topText" id="topText">
+                <p>TOP TEXT</p>
+            </article>
+
+            <article class="imgMeme" id="imgMeme">
+                <p id="alegria">Debe ingresar una url desde el menú imagen</p>
+            </article>
+
+            <article class="bottomText" id="bottonText">
+                <p>BOTTOM TEXT</p>
+            </article>
+
+            <button class="download">Descargar meme</button>
+        </section>
+
+        <aside class="aside">
+            <div id="contenedor-texto" class="oculto">
+            <form id="form-texto" class="class-form-txt" >
+                <h2 class="title-aside">Texto</h2>
+                <div>
+                    <label for="top-input">Superior</label>
+                    <textarea 
+                        name="text" 
+                        id="top-input" 
+                        cols="15" 
+                        rows="1" 
+                        maxlength="30"
+                        spellcheck="true">
+                    </textarea>
+                    <!-- <input type="text" id="top-input" value="Top text"> -->
+                
+                    <input id="top-check" type="checkbox">
+                    <label for="top-check">Sin texto Superior</label>
+                </div>
+                <div>
+                
+                    <label for="bot">Inferior</label>
+                    <input type="text" id="bot-input" value="Botton text">
+                    
+                    <input id="bot-check" type="checkbox">
+                    <label for="bot-check">Sin texto Inferior</label>
+                </div>
+                    <div>
+                    <label for="option">Fuente</label>
+                    <select name="option" id="option">
+                        <option value="arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="jokerman">Jokerman</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="lucida handwriting">Lucida Handwriting</option>
+                        <option value="Impact">Impact</option>
+                        <option value="comic sans ms">Comic Sans</option>
+                        <option value="algerian">Algerian</option>
+                    </select>
+
+                    <input type="number" value="16">
+                    <button>I</button>
+                    <button>C</button>
+                    <button>D</button>
+                </div>
+                <div>
+                    <label for="color">Color</label>
+                    <input type="color" id="color" value="#000000">
+                    <span>#000000</span>
+
+                    <label for="color">Fondo</label>
+                    <input type="color" id="fondo" value="#ffffff">
+                    <span>#ffffff</span>
+
+                    <input type="checkbox" id="transparente">
+                    <label for="transparente">Fondo transparente</label>
+                </div>
+
+                <div>
+                    <label>Contorno</label>
+                    <button>Ninguno</button>
+                    <button>Claro</button>
+                    <button>Oscuro</button>
+                </div>
+                <div>
+                    <label for="espaciado">Espaciado</label>
+                    <input type="number" id="espaciado" value="1.7">
+
+                    <label for="interlineado">interlineado</label>
+                    <select name="interlineado" id="interlineado">
+                        <option value="0.8">0.8</option>
+                        <option value="1.0">1.0</option>
+                        <option value="1.2">1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2.0">2.0</option>
+                    </select>
+                </div>
+            </form>
+
+            </div>
+
+            <form id="form-imagen" class="class-form-img">
+                <h2>Imagen</h2>
+
+                <label for="url">URL</label>
+                <input type="url" id="url" value="">
+
+                <label for="fondo">Fondo</label>
+                <input type="color" id="fonfo">
+
+                <select name="efecto" id="efecto">
+                    <option value="">Ninguno</option>
+                    <option value="">Aclarar</option>
+                    <option value="">Oscurecer</option>
+                    <option value="">Diferencia</option>
+                    <option value="">Luminosidad</option>
+                    <option value="">Multiplicar</option>                    
+                </select>
+
+                <h3>Filtros</h3>
+                <label for="brillo">Brillo</label>
+                <input type="range" id="brillo">
+
+                <label for="opacidad">Opacidad</label>
+                <input type="range" id="brillo">
+
+                <label for="contraste">Contraste</label>
+                <input type="range" id="brillo">
+
+                <label for="desenfoque">Desenfoque</label>
+                <input type="range" id="brillo">
+
+                <label for="escala">Escala de grises</label>
+                <input type="range" id="brillo">
+
+                <label for="sepia">Sepia</label>
+                <input type="range" id="brillo">
+
+                <label for="hue">Hue</label>
+                <input type="range" id="brillo">
+
+                <label for="saturado">Saturado</label>
+                <input type="range" id="brillo">
+
+                <label for="negativo">Negativo</label>
+                <input type="range" id="brillo">
+
+                <input type="reset" value="Restablecer filtos">
+            </form>
+        </aside>
+
+    </main>
+    
+
+    <footer>
+        Hecho con 💖 por Naty
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

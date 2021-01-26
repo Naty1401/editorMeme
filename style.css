@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+:root{
+    --amarillo: #FCF3B5;
+    --violeta: #5B1647;
+    --anaranjado: #FBD7B7;
+    --vino: #C6ACC7;
+    --rosado:  #ECB4BF;
+    --azul: #C2E3EC;
+    --fondos: seashell;
+}
+
+body{
+    height: 100vh;
+}
+
+main{
+    display: flex; /*lleva el aside para la derecha*/
+   /* justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;*/
+}
+header{
+    background-color: var(--vino);
+    width: 100%;
+    display: flex;
+    /*text-align: center;*/
+    flex-direction: column; /*pone el nav debajo del h1*/
+  
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+
+ul{
+    display: flex; /*me lo pone horizontal*/
+    list-style-type: none; /*saca los puntitos*/ 
+    justify-content: flex-end; /*todos sobre la izq*/
+    color: #fff;
+    height: 5vh;
+    /* width: 30%; */
+}
+li{
+    margin: 0.5%;
+    background-color:var(--rosado);
+    border-radius: 5px;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+}
+
+li:hover{
+    background-color: #fff;
+    color: blueviolet;
+    border-radius: 5px;
+}
+
+
+.container{
+    width: 70%;
+    background-color:var(--anaranjado);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+   
+}
+
+article{
+    width: 60%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.topText{
+    background-color: var(--amarillo);
+    height: 10vh;
+}
+
+.imgMeme{
+    background-color: var(--fondos);
+    height: 50vh;
+    font-size: 1.5rem;
+}
+
+.bottomText{
+    background-color: var(--amarillo);
+    height: 10vh;
+    
+}
+
+.oculto{
+    display: none;
+    /* visibility: hidden; */
+}
+
+.visible{
+    display: block;
+    /* visibility: visible; */
+}
+
+.download{
+    margin: 2%;
+    padding: .5%;
+    background-color: seagreen;
+    color: whitesmoke;
+}
+
+aside{
+    width: 30%;
+    height: 80vh;
+    background-color: var(--rosado);
+    display: flex;
+    
+}
+.class-form-txt{
+    display: flex; 
+    flex-direction: column; 
+    color: #fff;
+    line-height: 30px; /*interlineado*/
+    font-size: 1em;
+    margin: 1%;
+    /*display: none; */
+}
+
+.class-form-img{
+    display: flex;
+    flex-direction: column;
+}
+textarea {
+    resize: none;
+}
+
+.title-aside{
+    text-align: center;
+    padding: 2%;
+    font-size: 2.5em;
+}
+input, select{
+    background-color:var(--rosado);
+}
+
+form button{
+    width: 15%;
+}
+
+footer{
+    width: 100%;
+    background-color: var(--azul);
+    text-align: center;
+    padding: 2%;
+    color: whitesmoke;
+}
+
+
+
+@media(max-width: 500px){
+    .aside{
+        display: none;
+    }}
+
+
+
+.prueba{
+    font-family:  ;
+}
