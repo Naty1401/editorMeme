@@ -37,20 +37,21 @@
 
         <aside class="aside">
             <div id="contenedor-texto" class="oculto">
-            <form id="form-texto" class="class-form-txt" >
+            <form id="form-texto" class="class-form-txt">
                 <h2 class="title-aside">Texto</h2>
                 <div>
                     <label for="top-input">Superior</label>
                     <textarea 
                         name="text" 
                         id="top-input" 
-                        cols="15" 
-                        rows="1" 
+                        cols="25" 
+                        rows="2" 
                         maxlength="30"
                         spellcheck="true">
                     </textarea>
                     <!-- <input type="text" id="top-input" value="Top text"> -->
-                
+                </div>
+                <div>
                     <input id="top-check" type="checkbox">
                     <label for="top-check">Sin texto Superior</label>
                 </div>
@@ -58,7 +59,8 @@
                 
                     <label for="bot">Inferior</label>
                     <input type="text" id="bot-input" value="Botton text">
-                    
+                </div>
+                <div>    
                     <input id="bot-check" type="checkbox">
                     <label for="bot-check">Sin texto Inferior</label>
                 </div>
@@ -76,9 +78,9 @@
                     </select>
 
                     <input type="number" value="16">
-                    <button>I</button>
-                    <button>C</button>
-                    <button>D</button>
+                    <button = class="but-align"><img src="./img/iconos/Text-align-left-32.png" alt=""></button>
+                    <button><img src="./img/iconos/Text-align-center-32.png" alt=""></button>
+                    <button><img src="./img/iconos/Text-align-right-32.png" alt=""></button>
                 </div>
                 <div>
                     <label for="color">Color</label>
@@ -88,7 +90,8 @@
                     <label for="color">Fondo</label>
                     <input type="color" id="fondo" value="#ffffff">
                     <span>#ffffff</span>
-
+                </div>
+                <div>
                     <input type="checkbox" id="transparente">
                     <label for="transparente">Fondo transparente</label>
                 </div>
@@ -116,6 +119,8 @@
 
             </div>
 
+<!-- Formulario de imagen -->
+
             <form id="form-imagen" class="class-form-img">
                 <h2>Imagen</h2>
 
@@ -139,28 +144,28 @@
                 <input type="range" id="brillo">
 
                 <label for="opacidad">Opacidad</label>
-                <input type="range" id="brillo">
+                <input type="range" id="opacidad">
 
                 <label for="contraste">Contraste</label>
-                <input type="range" id="brillo">
+                <input type="range" id="contraste">
 
                 <label for="desenfoque">Desenfoque</label>
-                <input type="range" id="brillo">
+                <input type="range" id="desenfoque">
 
                 <label for="escala">Escala de grises</label>
-                <input type="range" id="brillo">
+                <input type="range" id="escala>
 
                 <label for="sepia">Sepia</label>
-                <input type="range" id="brillo">
+                <input type="range" id="sepia">
 
                 <label for="hue">Hue</label>
-                <input type="range" id="brillo">
+                <input type="range" id="hue">
 
                 <label for="saturado">Saturado</label>
-                <input type="range" id="brillo">
+                <input type="range" id="saturado">
 
                 <label for="negativo">Negativo</label>
-                <input type="range" id="brillo">
+                <input type="range" id="negativo">
 
                 <input type="reset" value="Restablecer filtos">
             </form>
