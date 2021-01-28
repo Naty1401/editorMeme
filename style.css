@@ -133,16 +133,20 @@ aside{
     display: flex;
     
 }
-
+#contenedor-texto{
+    /*background-color: var(--violeta);*/
+    width: 100%;
+}
 .class-form-txt{
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
-    width: 40%;
-    justify-content: center;
+    width: 100%;
+    justify-content: center; 
     align-items: center;
     margin: auto;
     line-height: 30px; /*interlineado*/
     text-align: center;
+    
 }
 
 
@@ -170,6 +174,7 @@ input, select{
 
 form button{
     width: auto;
+    height: auto;
 }
 
 footer{
@@ -189,8 +194,9 @@ input[type='range'] {
     margin: 10px;
 }
 
-
-
+input[type='number'] {
+    width: 4em;
+} 
 
 
 @media(max-width: 500px){

@@ -82,13 +82,47 @@ botCheck.addEventListener('click', () => {
 })
 
 
-
+//FONT-FAMILY
 const option = document.getElementById('option');
 
 option.addEventListener('change', () => {
     topText.style.fontFamily = `${option.value}`;
     bottonText.style.fontFamily = `${option.value}`;
 });
+
+//FONT-SIZE
+const size = document.getElementById('size');
+
+size.addEventListener('keyup', () =>{
+    topText.style.fontSize = `${size.value}px`;
+})
+size.addEventListener('click', () =>{
+    topText.style.fontSize = `${size.value}px`;
+})
+size.addEventListener('keyup', () =>{
+    bottonText.style.fontSize = `${size.value}px`;
+})
+size.addEventListener('click', () =>{
+    bottonText.style.fontSize = `${size.value}px`;
+})
+
+//ALIGN
+
+const buttonLeft = document.getElementById('buttonLeft');
+const buttonCenter = document.getElementById('buttonCenter');
+const buttonRight = document.getElementById('buttonRight');
+
+buttonLeft.addEventListener('keyup', () =>{
+    topText.style.textAlign = 'left';
+})
+buttonLeft.addEventListener('click', () =>{
+    topText.style.textAlign = 'left';
+})
+
+/*/////////////////////////////////////////////////////
+FORMULARIO DE IMAGEN
+////////////////////////////////////////////////////*/
+
 
 
 const urlImg = document.getElementById('url');
