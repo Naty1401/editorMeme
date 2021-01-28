@@ -202,10 +202,9 @@ input[type='number'] {
 @media(max-width: 500px){
     .aside{
         display: none;
-    }}
+    }
 
-
-
-.prueba{
-    font-family:  ;
+.container{
+        width: 100%;
+}
 }
