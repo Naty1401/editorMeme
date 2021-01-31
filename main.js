@@ -112,12 +112,27 @@ const buttonLeft = document.getElementById('buttonLeft');
 const buttonCenter = document.getElementById('buttonCenter');
 const buttonRight = document.getElementById('buttonRight');
 
-buttonLeft.addEventListener('keyup', () =>{
-    topText.style.textAlign = 'left';
+buttonLeft.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(e.target)
+    
+    topText.style.textAlign = 'left'
+    bottonText.style.textAlign = 'left'
 })
-buttonLeft.addEventListener('click', () =>{
-    topText.style.textAlign = 'left';
+
+buttonCenter.addEventListener('click', (e) => {
+    e.preventDefault();
+    bottonText.style.textAlign = 'center'
+    topText.style.textAlign = 'center'
 })
+
+buttonRight.addEventListener('click', (e) => {
+    console.log(e.target)
+    e.preventDefault();
+    bottonText.style.textAlign = 'right'
+    topText.style.textAlign = 'right'
+})
+
 
 /*/////////////////////////////////////////////////////
 FORMULARIO DE IMAGEN
@@ -139,3 +154,63 @@ urlImg.addEventListener('keyup', () => {
     console.log(src);
     alegria.classList.add('oculto')
 })
+
+const brillo = document.getElementById('brillo');
+const opacidad = document.getElementById('opacidad');
+const contraste = document.getElementById('contraste'); 
+const desenfoque = document.getElementById('desenfoque');
+const escala = document.getElementById('escala');
+const sepia = document.getElementById('sepia');
+const hue = document.getElementById('hue');
+const saturado = document.getElementById('saturado');
+const negativo = document.getElementById('negativo');
+const botonReset = document.getElementById('boton-reset');
+
+const filtro = () => {
+    imgMeme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${escala.value}%) sepia(${sepia.value}%) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})` 
+};
+
+botonReset.addEventListener('click', (e) => {
+    e.preventDefault()
+    brillo.value = 1;
+    opacidad.value = 1;
+    contraste.value = 100;
+    desenfoque.value = 0;
+    escala.value = 0;
+    sepia.value = 0;
+    hue.value = 0;
+    saturado.value = 100;
+    negativo.value = 0;
+    filtro();
+})
+
+brillo.addEventListener('change', filtro);
+
+opacidad.addEventListener('change', filtro);
+
+contraste.addEventListener('change', filtro);
+
+desenfoque.addEventListener('change', filtro);
+
+escala.addEventListener('change', filtro);
+
+sepia.addEventListener('change', filtro);
+
+hue.addEventListener('change', filtro);
+
+saturado.addEventListener('change', filtro);
+
+negativo.addEventListener('change', filtro);
+
+
+
+
+
+/*
+const jonh = 'El mejor profe del mundo';
+const teQuieroMucho = () => {
+    console.log('Muchas Gracias')};
+console.log(`Para ${jonh}: Vos me motivas 
+            a dar lo mejor de mi`);
+while(true) teQuieroMucho()          //Naty
+*/

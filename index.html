@@ -36,7 +36,8 @@
         </section>
 
         <aside class="aside">
-            <div id="contenedor-texto" class="oculto">
+            <div id="contenedor-texto" hidden="">
+                <!-- class="oculto"> -->
             <form id="form-texto" class="class-form-txt">
                 <h2 class="title-aside">Texto</h2>
                 <div>
@@ -68,14 +69,14 @@
                     <div>
                     <label for="option">Fuente</label>
                     <select name="option" id="option">
-                        <option value="arial">Arial</option>
-                        <option value="Arial Black">Arial Black</option>
-                        <option value="jokerman">Jokerman</option>
-                        <option value="monospace">Monospace</option>
-                        <option value="lucida handwriting">Lucida Handwriting</option>
-                        <option value="Impact">Impact</option>
-                        <option value="comic sans ms">Comic Sans</option>
-                        <option value="algerian">Algerian</option>
+                        <option value="arial" style="font-family:arial">Arial</option>
+                        <option value="Arial Black" style="font-family: 'arial black';">Arial Black</option>
+                        <option value="jokerman" style="font-family:jokerman">Jokerman</option>
+                        <option value="monospace" style="font-family:monospace">Monospace</option>
+                        <option value="lucida handwriting" style="font-family:'lucida handwriting'">Lucida Handwriting</option>
+                        <option value="Impact" style="font-family:impact">Impact</option>
+                        <option value="comic sans ms" style="font-family:'comic sans ms'">Comic Sans</option>
+                        <option value="algerian" style="font-family:algerian">Algerian</option>
                     </select>
 
                     <label for="size">Tamaño</label>
@@ -83,8 +84,8 @@
                 </div>
                 <div>    
                     
-                    <button id="buttonLeft"><img src="./img/iconos/Text-align-left-32.png" alt=""></button>
-                    <button id="buttonCenter"><img src="./img/iconos/Text-align-center-32.png" alt=""></button>
+                    <button id="buttonLeft"><img src="./img/iconos/Text-align-left-32.png" alt="left"></button>
+                    <button id="buttonCenter"><img src="./img/iconos/Text-align-center-32.png" alt="center"></button>
                     <button id="buttonRight"><img src="./img/iconos/Text-align-right-32.png" alt=""></button>
                 </div>
                 <div>
@@ -132,6 +133,8 @@
                 <label for="url">URL</label>
                 <input type="url" id="url" value="">
 
+                <input type="file" >
+
                 <label for="fondo">Fondo</label>
                 <input type="color" id="fonfo">
 
@@ -146,33 +149,34 @@
 
                 <h3>Filtros</h3>
                 <label for="brillo">Brillo</label>
-                <input type="range" id="brillo">
+                <input type="range" id="brillo" min="0" max="1" step=".1" value="1">
 
                 <label for="opacidad">Opacidad</label>
-                <input type="range" id="opacidad">
+                <input type="range" id="opacidad" min="0" max="1" step=".1" value="1">
 
                 <label for="contraste">Contraste</label>
-                <input type="range" id="contraste">
+                <input type="range" id="contraste" min="100" max="1000" step="1" value="100">
 
                 <label for="desenfoque">Desenfoque</label>
-                <input type="range" id="desenfoque">
+                <input type="range" id="desenfoque" min="0" max="10" step=".1" value="0">
 
                 <label for="escala">Escala de grises</label>
-                <input type="range" id="escala>
+                <input type="range" id="escala" min="0" max="100" step="1" value="0"> 
 
                 <label for="sepia">Sepia</label>
-                <input type="range" id="sepia">
+                <input type="range" id="sepia" min="0" max="100" step="1" value="0">
 
                 <label for="hue">Hue</label>
-                <input type="range" id="hue">
+                <input type="range" id="hue" min="0" max="359" step="1" value="0">
 
                 <label for="saturado">Saturado</label>
-                <input type="range" id="saturado">
+                <input type="range" id="saturado" min="100" max="1000" step="10" value="100">
 
                 <label for="negativo">Negativo</label>
-                <input type="range" id="negativo">
+                <input type="range" id="negativo" min="0" max="1" step=".1" value="0">
 
-                <input type="reset" value="Restablecer filtos">
+                <!-- <input type="reset" value="Restablecer filtos" id="boton-reset"> -->
+                <button id="boton-reset">Restablecer</button>
             </form>
         </aside>
 

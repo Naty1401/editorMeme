@@ -1,0 +1,15 @@
+.filtro{
+    filter: brightness(1);
+    filter: opacity(1);
+    filter: contrast();
+    filter: blur();
+    filter: grayscale();
+    filter: sepia();
+    filter: hue-rotate();
+    filter: saturate();
+    filter: invert();
+}
+
+.filtor{
+    filter: brightness() opacity()
+}
