@@ -3,6 +3,7 @@ const formTexto = document.getElementById('form-texto');
 const listaTexto = document.getElementById('lista-texto');
 const formImagen = document.getElementById('form-imagen');
 const contenedorTexto = document.getElementById('contenedor-texto');
+const claroOscuro = document.getElementById('claroOscuro')
 
 listaTexto.addEventListener('click',()=> {
     formImagen.style.display = 'none'
@@ -12,6 +13,11 @@ listaTexto.addEventListener('click',()=> {
 listaImagen.addEventListener('click', () =>{
     contenedorTexto.style.display = 'none';
     formImagen.style.display = 'flex';
+})
+
+claroOscuro.addEventListener('click',() => {
+    document.body.classList.toggle('dark');
+    document.body.style.zIndex = '100'
 })
 /*listaImagen.addEventListener('click',() =>{
     formTexto.classList.add('oculto');
@@ -24,51 +30,38 @@ listaTexto.addEventListener('click',()=>{
     //formTexto.style.display = '';
     formImagen.classList.add('oculto');
     formTexto.classList.add('visible');
-    
 })*/
-
-/*const mostrar = ()=> {
-    formTexto= document.getElementById('listaTexto');
-    formTexto.style.display = '';
-}
-
-function cerrar() {
-    div = document.getElementById('flotante');
-    div.style.display = 'none';
-}*/
 
 const topText = document.getElementById('topText');
 const topInput = document.getElementById('top-input');
+const topCheck = document.getElementById('top-check');
+const imgMeme = document.getElementById('imgMeme');
+const bottonText = document.getElementById('bottonText');
+const botImput = document.getElementById('bot-input')
+const botCheck = document.getElementById('bot-check')
 
 topInput.addEventListener('keyup', () => {
     topText.innerHTML = topInput.value;
 })
 
-
-const topCheck = document.getElementById('top-check');
-const imgMeme = document.getElementById('imgMeme');
-
 topCheck.addEventListener('click', () => {
-    if(topCheck.checked){
+    topText.classList.toggle('oculto');
+    (topCheck.checked) ? imgMeme.style.height = '60vh' : imgMeme.style.height = '50vh';
+    
+    /*if(topCheck.checked){
         topText.classList.add('oculto');
         imgMeme.style.height = '60vh';
     }
     else {
         topText.classList.remove('oculto');
         imgMeme.style.height = '50vh'
-    }    
+    }      */
     //(topCheck.checked) ? topText.classList.add('oculto') : topText.classList.remove('oculto')
 })
-
-
-const bottonText = document.getElementById('bottonText');
-const botImput = document.getElementById('bot-input')
 
 botImput.addEventListener('keyup', ()=> {
     bottonText.innerHTML = botImput.value;
 })
-
-const botCheck = document.getElementById('bot-check')
 
 botCheck.addEventListener('click', () => {
     if(botCheck.checked){
@@ -80,6 +73,13 @@ botCheck.addEventListener('click', () => {
         imgMeme.style.height = '50vh';    
     }
 })
+
+// topCheck.checked && botCheck.checked 
+// {
+//     topText.classList.add('oculto');
+//     bottonText.classList.add('oculto');
+//     imgMeme.style.height = '70vh'
+// }
 
 
 ////////////////////////////////////////////////////FONT-FAMILY
@@ -133,7 +133,6 @@ buttonRight.addEventListener('click', (e) => {
     topText.style.textAlign = 'right'
 })
 
-
 //////////////////////////////////////////////////////////////COLORES
 
 const color = document.getElementById('color');
@@ -170,6 +169,8 @@ transparente.addEventListener('click', () => {
     }    
 
 })
+
+/////////////////////////////////////////////////////////Contornos
 
 const contornoNinguno = document.getElementById('contornoNinguno');
 const contornoClaro = document.getElementById('contornoClaro');
@@ -238,12 +239,20 @@ urlImg.addEventListener('keyup', () => {
 })
 
 const fondoImgMeme = document.getElementById('fondo-imgMeme');
+const efecto = document.getElementById('efecto');
+const container = document.getElementById('container');
 
 fondoImgMeme.addEventListener('input', (e) => {
     const colorDeFondo = e.target.value;
     imgMeme.style.backgroundColor = colorDeFondo;
-    imgMeme.style.zIndex = '';
 })
+
+efecto.addEventListener('change', () => {
+    imgMeme.style.backgroundBlendMode = efecto.value;
+})
+
+//mixBlendMode = efecto.value
+
 
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');

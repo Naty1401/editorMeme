@@ -26,7 +26,7 @@ main{
     width: 100%;*/
 }
 header{
-    background-color: var(--vino);
+    /* background-color: var(--vino); */
     width: 100%;
     display: flex;
     /*text-align: center;*/
@@ -189,7 +189,7 @@ form button{
 
 footer{
     width: 100%;
-    background-color: var(--azul);
+    /* background-color: var(--azul); */
     text-align: center;
     padding: 2%;
     color: whitesmoke;
@@ -215,6 +215,10 @@ input[type='number'] {
     
     }
 
+body.dark{
+    background-color: #292c35;
+    color: white;
+}
 /*
 @media(max-width: 500px){
     .aside{
