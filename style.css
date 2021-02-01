@@ -66,6 +66,7 @@ li:hover{
 /***/                   
 .container{
     width: 70%;
+    height: 80vh;
     background-color:var(--anaranjado);
     display: flex;
     flex-direction: column;
@@ -73,6 +74,7 @@ li:hover{
     align-items: center;
     font-size: 40px;
     font-weight: bold;
+    
 }
 
 article{
@@ -81,16 +83,20 @@ article{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 }
 
+
 article p{
     width: 100%; 
-    background-color: aquamarine;
 }
 .topText{
     background-color: var(--amarillo);
     height: 10vh;
+    /* height: auto; */
+    max-height: 10vh;
+   
 }
 
 .imgMeme{
@@ -115,7 +121,7 @@ article p{
 
 .oculto{
     display: none;
-    /* visibility: hidden; */
+    /* visibility: hidden;  */
 }
 
 .visible{
@@ -202,8 +208,14 @@ input[type='number'] {
     width: 4em;
 } 
 
+.stroke {
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
 
+    -webkit-text-stroke: 2px black;
+    
+    }
 
+/*
 @media(max-width: 500px){
     .aside{
         display: none;
@@ -222,4 +234,4 @@ article{
 ul{
     justify-content: center;
 }
-}
+}*/

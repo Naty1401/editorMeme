@@ -23,21 +23,25 @@
             <article class="topText" id="topText">
                 <p>TOP TEXT</p>
             </article>
-
             <article class="imgMeme" id="imgMeme">
+
                 <p id="alegria">Debe ingresar una url desde el menú imagen</p>
             </article>
 
             <article class="bottomText" id="bottonText">
                 <p>BOTTOM TEXT</p>
             </article>
-
-            <button class="download">Descargar meme</button>
         </section>
+
+            <!-- <button class="download">Descargar meme</button> -->
 
         <aside class="aside">
             <div id="contenedor-texto" hidden="">
                 <!-- class="oculto"> -->
+
+
+<!-- *******************FORMULARIO DE TEXTO*********************  -->
+
             <form id="form-texto" class="class-form-txt">
                 <h2 class="title-aside">Texto</h2>
                 <div>
@@ -59,8 +63,17 @@
                 </div>
                 <div>
                 
-                    <label for="bot">Inferior</label>
-                    <input type="text" id="bot-input" value="Botton text">
+                    <label for="bot-input">Inferior</label>
+                    <!-- <input type="text" id="bot-input" value="Botton text"> -->
+                    <textarea 
+                        name="text" 
+                        id="bot-input" 
+                        cols="35" 
+                        rows="3" 
+
+                        wrap="hard"
+                        spellcheck="true">
+                    </textarea>
                 </div>
                 <div>    
                     <input id="bot-check" type="checkbox">
@@ -69,6 +82,7 @@
                     <div>
                     <label for="option">Fuente</label>
                     <select name="option" id="option">
+                        <option value="select">Seleccionar</option>
                         <option value="arial" style="font-family:arial">Arial</option>
                         <option value="Arial Black" style="font-family: 'arial black';">Arial Black</option>
                         <option value="jokerman" style="font-family:jokerman">Jokerman</option>
@@ -91,11 +105,11 @@
                 <div>
                     <label for="color">Color</label>
                     <input type="color" id="color" value="#000000">
-                    <span>#000000</span>
+                    <span id="hex-color-texto">#000000</span>
 
                     <label for="color">Fondo</label>
                     <input type="color" id="fondo" value="#ffffff">
-                    <span>#ffffff</span>
+                    <span id="hex-color-fondo">#ffffff</span>
                 </div>
                 <div>
                     <input type="checkbox" id="transparente">
@@ -104,13 +118,13 @@
 
                 <div>
                     <label>Contorno</label>
-                    <button>Ninguno</button>
-                    <button>Claro</button>
-                    <button>Oscuro</button>
+                    <button id="contornoNinguno">Ninguno</button>
+                    <button id="contornoClaro">Claro</button>
+                    <button id="contornoOscuro">Oscuro</button>
                 </div>
                 <div>
                     <label for="espaciado">Espaciado</label>
-                    <input type="number" id="espaciado" value="1.7">
+                    <input type="number" id="espaciado" value="1.7" min="0" max="20">
 
                     <label for="interlineado">interlineado</label>
                     <select name="interlineado" id="interlineado">
@@ -133,10 +147,10 @@
                 <label for="url">URL</label>
                 <input type="url" id="url" value="">
 
-                <input type="file" >
+                <!-- <input type="file" > -->
 
-                <label for="fondo">Fondo</label>
-                <input type="color" id="fonfo">
+                <label for="fondo-imgMene">Fondo</label>
+                <input type="color" id="fondo-imgMeme">
 
                 <select name="efecto" id="efecto">
                     <option value="">Ninguno</option>

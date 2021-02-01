@@ -82,7 +82,7 @@ botCheck.addEventListener('click', () => {
 })
 
 
-//FONT-FAMILY
+////////////////////////////////////////////////////FONT-FAMILY
 const option = document.getElementById('option');
 
 option.addEventListener('change', () => {
@@ -90,7 +90,7 @@ option.addEventListener('change', () => {
     bottonText.style.fontFamily = `${option.value}`;
 });
 
-//FONT-SIZE
+//////////////////////////////////////////////////////FONT-SIZE
 const size = document.getElementById('size');
 
 size.addEventListener('keyup', () =>{
@@ -106,7 +106,7 @@ size.addEventListener('click', () =>{
     bottonText.style.fontSize = `${size.value}px`;
 })
 
-//ALIGN
+////////////////////////////////////////////////////////ALIGN
 
 const buttonLeft = document.getElementById('buttonLeft');
 const buttonCenter = document.getElementById('buttonCenter');
@@ -134,6 +134,88 @@ buttonRight.addEventListener('click', (e) => {
 })
 
 
+//////////////////////////////////////////////////////////////COLORES
+
+const color = document.getElementById('color');
+const fondo = document.getElementById('fondo');
+const hexColorTexto = document.getElementById('hex-color-texto');
+const hexColorFondo = document.getElementById('hex-color-fondo');
+const transparente = document.getElementById('transparente');
+
+color.addEventListener('input', (e) => {
+    const colorTexto = e.target.value;
+    topText.style.color = colorTexto;
+    bottonText.style.color = colorTexto;
+    hexColorTexto.innerHTML = colorTexto.toUpperCase();
+});
+
+fondo.addEventListener('input', (e) => {
+    const colorFondo = e.target.value;
+    topText.style.backgroundColor = colorFondo;
+    bottonText.style.backgroundColor = colorFondo;
+    hexColorFondo.innerHTML = colorFondo.toUpperCase();
+})
+
+transparente.addEventListener('click', () => {
+    if(transparente.checked){
+        topText.classList.add('oculto');
+        bottonText.classList.add('oculto');
+        imgMeme.style.height = '70vh';
+        
+    }
+    else {
+        topText.classList.remove('oculto');
+        bottonText.classList.remove('oculto');
+        imgMeme.style.height = '50vh'
+    }    
+
+})
+
+const contornoNinguno = document.getElementById('contornoNinguno');
+const contornoClaro = document.getElementById('contornoClaro');
+const contornoOscuro = document.getElementById('contornoOscuro');
+
+contornoNinguno.addEventListener('click', (e) => {
+    e.preventDefault();
+    topText.classList.remove('stroke');
+    bottonText.classList.remove('stroke');
+    topText.style.textShadow = 'none'
+})
+
+contornoClaro.addEventListener('click', (e) => {
+    e.preventDefault();
+    topText.classList.remove('stroke');
+    bottonText.classList.remove('stroke');
+    topText.style.textShadow = '-1px -1px 1px #fff, 1px 1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff';
+    bottonText.style.textShadow = '-1px -1px 1px #fff, 1px 1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff';
+})
+
+contornoOscuro.addEventListener('click', (e) => {
+    e.preventDefault();
+    topText.style.textShadow = 'none'
+    bottonText.style.textShadow = 'none'
+    topText.classList.add('stroke')
+    bottonText.classList.add('stroke')
+})
+
+
+///////////////////////////////////////////////////////////////////espaciado
+
+const espaciado = document.getElementById('espaciado');
+const interlineado = document.getElementById('interlineado');
+
+espaciado.addEventListener('change', (e) => {
+    //console.log(e.target.value);
+    const espaciadoIngresado = e.target.value;
+    topText.style.letterSpacing = `${espaciadoIngresado}px`;
+    bottonText.style.letterSpacing = `${espaciadoIngresado}px`;
+})
+
+interlineado.addEventListener('change', () => {
+    topText.style.lineHeight = interlineado.value;
+    bottonText.style.lineHeight = interlineado.value;
+})
+
 /*/////////////////////////////////////////////////////
 FORMULARIO DE IMAGEN
 ////////////////////////////////////////////////////*/
@@ -148,11 +230,19 @@ urlImg.addEventListener('keyup', () => {
     const src = urlImg.value;
     // console.log(e.target.value);
     imgMeme.style.backgroundImage = `url('${src}')`;
-    imgMeme.style.backgroundSize = 'contain';
+    imgMeme.style.backgroundSize = 'cover';
     imgMeme.style.backgroundRepeat = 'no-repeat';
     imgMeme.style.backgroundPosition = 'center';
     console.log(src);
     alegria.classList.add('oculto')
+})
+
+const fondoImgMeme = document.getElementById('fondo-imgMeme');
+
+fondoImgMeme.addEventListener('input', (e) => {
+    const colorDeFondo = e.target.value;
+    imgMeme.style.backgroundColor = colorDeFondo;
+    imgMeme.style.zIndex = '';
 })
 
 const brillo = document.getElementById('brillo');
@@ -185,21 +275,13 @@ botonReset.addEventListener('click', (e) => {
 })
 
 brillo.addEventListener('change', filtro);
-
 opacidad.addEventListener('change', filtro);
-
 contraste.addEventListener('change', filtro);
-
 desenfoque.addEventListener('change', filtro);
-
 escala.addEventListener('change', filtro);
-
 sepia.addEventListener('change', filtro);
-
 hue.addEventListener('change', filtro);
-
 saturado.addEventListener('change', filtro);
-
 negativo.addEventListener('change', filtro);
 
 
