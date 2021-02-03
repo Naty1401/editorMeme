@@ -15,10 +15,7 @@ listaImagen.addEventListener('click', () =>{
     formImagen.style.display = 'flex';
 })
 
-claroOscuro.addEventListener('click',() => {
-    document.body.classList.toggle('dark');
-    document.body.style.zIndex = '100'
-})
+
 /*listaImagen.addEventListener('click',() =>{
     formTexto.classList.add('oculto');
     //formTexto.style.display = 'none';
@@ -64,17 +61,22 @@ botImput.addEventListener('keyup', ()=> {
 })
 
 botCheck.addEventListener('click', () => {
-    if(botCheck.checked){
+    if(topCheck.checked && botCheck.checked){ //cuando estan los 2 checks seleccioandos 
+        bottonText.classList.add('oculto');   //me mantiene el tamaño de imgMeme
+        imgMeme.style.height = '70vh'
+    }
+    else if(botCheck.checked){
         bottonText.classList.add('oculto');
         imgMeme.style.height = '60vh'
     }
     else{
         bottonText.classList.remove('oculto');
-        imgMeme.style.height = '50vh';    
+        imgMeme.style.height = '50vh';  
+  
     }
 })
 
-// topCheck.checked && botCheck.checked 
+//topCheck.checked && botCheck.checked ? imgMeme.style.height = '70vh'
 // {
 //     topText.classList.add('oculto');
 //     bottonText.classList.add('oculto');
@@ -155,7 +157,7 @@ fondo.addEventListener('input', (e) => {
     hexColorFondo.innerHTML = colorFondo.toUpperCase();
 })
 
-transparente.addEventListener('click', () => {
+/*transparente.addEventListener('click', () => {
     if(transparente.checked){
         topText.classList.add('oculto');
         bottonText.classList.add('oculto');
@@ -168,6 +170,22 @@ transparente.addEventListener('click', () => {
         imgMeme.style.height = '50vh'
     }    
 
+})*/
+
+transparente.addEventListener('click', () => {
+    if(transparente.checked){
+        imgMeme.style.height = '70vh';
+        imgMeme.style.position = 'absolute';
+        imgMeme.style.zIndex = '1'
+        bottonText.style.backgroundColor = 'transparent';
+        bottonText.style.zIndex = '2'
+        topText.style.backgroundColor = 'transparent';
+        topText.style.zIndex = '2';
+        topText.style.marginBottom = '50vh'
+    }
+    else {
+
+    }
 })
 
 /////////////////////////////////////////////////////////Contornos
@@ -293,6 +311,21 @@ hue.addEventListener('change', filtro);
 saturado.addEventListener('change', filtro);
 negativo.addEventListener('change', filtro);
 
+claroOscuro.addEventListener('click',() => {    
+    //cambiarModo.innerHTML = 'Modo Claro'
+    document.body.classList.toggle('dark');
+    if(claroOscuro.checked){ 
+    document.getElementsByClassName("container")[0].style.backgroundColor = '#192536';
+    document.getElementById("header").style.backgroundColor = "#1C293F";
+    document.getElementById("footer").style.backgroundColor = "#52517C";
+    document.getElementById("aside").style.backgroundColor = "#232A35";
+    document.getElementById('topText').style.backgroundColor = '#1D263F';
+    document.getElementById('bottonText').style.backgroundColor = '#1D263F';
+    document.getElementById('imgMeme').style.backgroundColor = '#000';
+    }else{
+        location.reload() //tengo que buscar otra solucion
+    }
+})
 
 
 

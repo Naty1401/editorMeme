@@ -3,39 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" id="temas">
+    <!-- <link rel="stylesheet" href="./css/dark.css"> -->
     <title>Editor de memes</title>
 </head>
 <body>
-    <header>
+    <header class="header" id="header">
         <h1>Editor de Memes</h1>
         <nav>
             <ul>
                 <li id="lista-imagen">Imagen</li>
                 <li id="lista-texto">Texto</li>
-                <li id="claroOscuro">Modo oscuro</li>
+                <li>   
+                    <label for=claroOscuro">Modo oscuro
+                        <input type="checkbox" id="claroOscuro">
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="container">
-            <article class="topText" id="topText">
-                <p>TOP TEXT</p>
+            <article >
+                <p id="topText" class="topbotText" >TOP TEXT</p> <!--class="topText"-->
             </article>
             <article class="imgMeme" id="imgMeme">
 
                 <p id="alegria">Debe ingresar una url desde el menú imagen</p>
             </article>
 
-            <article class="bottomText" id="bottonText">
-                <p>BOTTOM TEXT</p>
+            <article>
+                <p id="bottonText" class="topbotText">BOTTOM TEXT</p> <!--class="bottomText"-->
             </article>
         </section>
 
-            <!-- <button class="download">Descargar meme</button> -->
+            <button class="download">Descargar meme</button>
 
-        <aside class="aside">
+        <aside class="aside" id="aside">
             <div id="contenedor-texto" hidden="">
                 <!-- class="oculto"> -->
 
@@ -44,7 +49,7 @@
 
             <form id="form-texto" class="class-form-txt">
                 <h2 class="title-aside">Texto</h2>
-                <div>
+                <!-- <div> -->
                     <label for="top-input">Superior</label>
                     <textarea 
                         name="text" 
@@ -56,12 +61,12 @@
                         spellcheck="true">
                     </textarea>
                     <!-- <input type="text" id="top-input" value="Top text"> -->
-                </div>
+                <!-- </div> -->
                 <div>
                     <input id="top-check" type="checkbox">
                     <label for="top-check">Sin texto Superior</label>
                 </div>
-                <div>
+                <!-- <div> -->
                 
                     <label for="bot-input">Inferior</label>
                     <!-- <input type="text" id="bot-input" value="Botton text"> -->
@@ -74,7 +79,7 @@
                         wrap="hard"
                         spellcheck="true">
                     </textarea>
-                </div>
+                <!-- </div> -->
                 <div>    
                     <input id="bot-check" type="checkbox">
                     <label for="bot-check">Sin texto Inferior</label>
@@ -199,7 +204,7 @@
     </main>
     
 
-    <footer>
+    <footer id="footer">
         Hecho con 💖 por Naty
     </footer>
 

@@ -1,0 +1,29 @@
+header{
+    background-color: #000;
+    color: #fff;
+}
+
+.container{
+    background-color: grey;
+    color: #fff;
+}
+
+.topText{
+    background-color: rgb(68, 58, 58);
+    color: #fff;
+}
+
+.bottomText{
+    background-color: rgb(68, 58, 58);
+    color: #fff;
+}
+
+aside{
+    background-color: #000;
+    color: #fff;
+}
+
+footer{
+    background-color: rgb(102, 80, 80);
+    color: #fff;
+}
