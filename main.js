@@ -1,88 +1,63 @@
-const listaImagen = document.getElementById('lista-imagen');
-const formTexto = document.getElementById('form-texto');
-const listaTexto = document.getElementById('lista-texto');
-const formImagen = document.getElementById('form-imagen');
-const contenedorTexto = document.getElementById('contenedor-texto');
-const claroOscuro = document.getElementById('claroOscuro')
+const listaImagen = document.getElementById('lista-imagen'); //Encabezado imagen
+const formTexto = document.getElementById('form-texto'); //forulario texto
+const listaTexto = document.getElementById('lista-texto'); //Encabezado texto
+const formImagen = document.getElementById('form-imagen'); //formulario imagen
+const contenedorTexto = document.getElementById('contenedor-texto'); //borrar
+const claroOscuro = document.getElementById('claroOscuro') //Encabezado modo oscuro
 
 listaTexto.addEventListener('click',()=> {
     formImagen.style.display = 'none'
-    contenedorTexto.style.display = 'flex'
+    //contenedorTexto.style.display = 'flex'
+    formTexto.style.display = 'block'
 })
 
 listaImagen.addEventListener('click', () =>{
-    contenedorTexto.style.display = 'none';
+    //contenedorTexto.style.display = 'none';
     formImagen.style.display = 'flex';
+    formTexto.style.display = 'none'
 })
 
+//////////////////////////  ^^^^^^^^^^^^^^^^  \\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////<<<<<<<<<<   FORMULARIO TEXTO  >>>>>>>>>>\\\\\\\\\\\\\\\\\
+//////////////////////////  ****************  \\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-/*listaImagen.addEventListener('click',() =>{
-    formTexto.classList.add('oculto');
-    //formTexto.style.display = 'none';
-    //formImagen.classList.add('visible');
-})
-
-listaTexto.addEventListener('click',()=>{
-    //formImagen.style.display = 'none';
-    //formTexto.style.display = '';
-    formImagen.classList.add('oculto');
-    formTexto.classList.add('visible');
-})*/
-
-const topText = document.getElementById('topText');
-const topInput = document.getElementById('top-input');
-const topCheck = document.getElementById('top-check');
+const topText = document.getElementById('topText'); //p dentro del article superior
+const topInput = document.getElementById('top-input'); //textarea superior
+const topCheck = document.getElementById('top-check'); //sin texto superior
 const imgMeme = document.getElementById('imgMeme');
-const bottonText = document.getElementById('bottonText');
-const botImput = document.getElementById('bot-input')
-const botCheck = document.getElementById('bot-check')
+const bottonText = document.getElementById('bottonText'); //p dentro del article inferior
+const botImput = document.getElementById('bot-input') //textarea inferior
+const botCheck = document.getElementById('bot-check') //sin texto inferior
 
 topInput.addEventListener('keyup', () => {
     topText.innerHTML = topInput.value;
-})
-
-topCheck.addEventListener('click', () => {
-    topText.classList.toggle('oculto');
-    (topCheck.checked) ? imgMeme.style.height = '60vh' : imgMeme.style.height = '50vh';
-    
-    /*if(topCheck.checked){
-        topText.classList.add('oculto');
-        imgMeme.style.height = '60vh';
-    }
-    else {
-        topText.classList.remove('oculto');
-        imgMeme.style.height = '50vh'
-    }      */
-    //(topCheck.checked) ? topText.classList.add('oculto') : topText.classList.remove('oculto')
 })
 
 botImput.addEventListener('keyup', ()=> {
     bottonText.innerHTML = botImput.value;
 })
 
-botCheck.addEventListener('click', () => {
-    if(topCheck.checked && botCheck.checked){ //cuando estan los 2 checks seleccioandos 
-        bottonText.classList.add('oculto');   //me mantiene el tamaño de imgMeme
+const verificarCheck = () => {
+    if(topCheck.checked && botCheck.checked){
         imgMeme.style.height = '70vh'
     }
-    else if(botCheck.checked){
-        bottonText.classList.add('oculto');
+    else if(topCheck.checked || botCheck.checked){
         imgMeme.style.height = '60vh'
     }
     else{
-        bottonText.classList.remove('oculto');
-        imgMeme.style.height = '50vh';  
-  
+        imgMeme.style.height = '50vh'
     }
+}
+
+topCheck.addEventListener('click', () => {
+    topText.classList.toggle('oculto');
+    verificarCheck()
 })
 
-//topCheck.checked && botCheck.checked ? imgMeme.style.height = '70vh'
-// {
-//     topText.classList.add('oculto');
-//     bottonText.classList.add('oculto');
-//     imgMeme.style.height = '70vh'
-// }
-
+botCheck.addEventListener('click', () => {
+    bottonText.classList.toggle('oculto');
+    verificarCheck();
+})
 
 ////////////////////////////////////////////////////FONT-FAMILY
 const option = document.getElementById('option');
@@ -135,7 +110,7 @@ buttonRight.addEventListener('click', (e) => {
     topText.style.textAlign = 'right'
 })
 
-//////////////////////////////////////////////////////////////COLORES
+////////////////////////////////////////////////////////////////////////COLORES
 
 const color = document.getElementById('color');
 const fondo = document.getElementById('fondo');
@@ -156,21 +131,7 @@ fondo.addEventListener('input', (e) => {
     bottonText.style.backgroundColor = colorFondo;
     hexColorFondo.innerHTML = colorFondo.toUpperCase();
 })
-
-/*transparente.addEventListener('click', () => {
-    if(transparente.checked){
-        topText.classList.add('oculto');
-        bottonText.classList.add('oculto');
-        imgMeme.style.height = '70vh';
-        
-    }
-    else {
-        topText.classList.remove('oculto');
-        bottonText.classList.remove('oculto');
-        imgMeme.style.height = '50vh'
-    }    
-
-})*/
+//////////////////////////////////////////////////////////////////Fondo transparente
 
 transparente.addEventListener('click', () => {
     if(transparente.checked){
@@ -184,11 +145,11 @@ transparente.addEventListener('click', () => {
         topText.style.marginBottom = '50vh'
     }
     else {
-
+        alert('No esta hecho')
     }
 })
 
-/////////////////////////////////////////////////////////Contornos
+///////////////////////////////////////////////////////////////////////Contornos
 
 const contornoNinguno = document.getElementById('contornoNinguno');
 const contornoClaro = document.getElementById('contornoClaro');
@@ -218,13 +179,12 @@ contornoOscuro.addEventListener('click', (e) => {
 })
 
 
-///////////////////////////////////////////////////////////////////espaciado
+///////////////////////////////////////////////////////////////////espaciado e interlineado
 
 const espaciado = document.getElementById('espaciado');
 const interlineado = document.getElementById('interlineado');
 
 espaciado.addEventListener('change', (e) => {
-    //console.log(e.target.value);
     const espaciadoIngresado = e.target.value;
     topText.style.letterSpacing = `${espaciadoIngresado}px`;
     bottonText.style.letterSpacing = `${espaciadoIngresado}px`;
@@ -235,15 +195,13 @@ interlineado.addEventListener('change', () => {
     bottonText.style.lineHeight = interlineado.value;
 })
 
-/*/////////////////////////////////////////////////////
-FORMULARIO DE IMAGEN
-////////////////////////////////////////////////////*/
-
+//////////////////////////  ^^^^^^^^^^^^^^^^^  \\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////<<<<<<<<<<   FORMULARIO IMAGEN  >>>>>>>>>>\\\\\\\\\\\\\\\\\
+//////////////////////////  *****************  \\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 const urlImg = document.getElementById('url');
-//const imgMeme = document.getElementById('imgMeme');
-const alegria = document.getElementById('alegria')
+const alegria = document.getElementById('alegria');
 
 urlImg.addEventListener('keyup', () => {
     const src = urlImg.value;
@@ -258,7 +216,7 @@ urlImg.addEventListener('keyup', () => {
 
 const fondoImgMeme = document.getElementById('fondo-imgMeme');
 const efecto = document.getElementById('efecto');
-const container = document.getElementById('container');
+const container = document.getElementById('container'); //seccion que contiene a los articles
 
 fondoImgMeme.addEventListener('input', (e) => {
     const colorDeFondo = e.target.value;
@@ -269,8 +227,7 @@ efecto.addEventListener('change', () => {
     imgMeme.style.backgroundBlendMode = efecto.value;
 })
 
-//mixBlendMode = efecto.value
-
+//////////////////////////////////////////////////////////Filtros
 
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
@@ -311,30 +268,51 @@ hue.addEventListener('change', filtro);
 saturado.addEventListener('change', filtro);
 negativo.addEventListener('change', filtro);
 
+/////////////////////////////////////////////////////Modo claro/oscuro
+
+// claroOscuro.addEventListener('click',() => {    
+//     document.querySelector('#Label1').innerText = 'Modo Claro';
+//     document.body.classList.toggle('dark');
+//     if(claroOscuro.checked){ 
+//     document.getElementsByClassName("container")[0].style.backgroundColor = '#30343F';
+//     document.getElementById('topText').style.backgroundColor = '#1D263F';
+//     document.getElementById('bottonText').style.backgroundColor = '#1D263F';
+//     document.getElementById("aside").style.backgroundColor = "#232A35";
+//     document.getElementById("header").style.backgroundColor = "#1C293F";
+//     document.getElementById("footer").style.backgroundColor = "#52517C";
+//     document.getElementById('imgMeme').style.backgroundColor = '#000';
+//     }else{
+//         alert('Se perderán los datos ingresados')
+//         location.reload() //tengo que buscar una mejor solucion
+//     }
+// })
+
+// claroOscuro.addEventListener('click',() => {    
+//     document.querySelector('#Label1').innerText = 'Modo Claro';
+//     document.body.classList.toggle('dark');
+// })
+
+function modoOscuroPosta(){
+    document.documentElement.style.setProperty('--amarillo', '#1D263F');
+    document.documentElement.style.setProperty('--anaranjado', '#30343F');
+    document.documentElement.style.setProperty('--vino', '#1C293F');
+    document.documentElement.style.setProperty('--rosado', '#232A35');
+}
+
+function restablecerModo(){
+    document.documentElement.style.setProperty('--amarillo', '#FCF3B5');
+    document.documentElement.style.setProperty('--anaranjado', '#FBD7B7');
+    document.documentElement.style.setProperty('--vino', '#C6ACC7');
+    document.documentElement.style.setProperty('--rosado', '#ECB4BF');
+}
+
 claroOscuro.addEventListener('click',() => {    
-    //cambiarModo.innerHTML = 'Modo Claro'
-    document.body.classList.toggle('dark');
-    if(claroOscuro.checked){ 
-    document.getElementsByClassName("container")[0].style.backgroundColor = '#192536';
-    document.getElementById("header").style.backgroundColor = "#1C293F";
-    document.getElementById("footer").style.backgroundColor = "#52517C";
-    document.getElementById("aside").style.backgroundColor = "#232A35";
-    document.getElementById('topText').style.backgroundColor = '#1D263F';
-    document.getElementById('bottonText').style.backgroundColor = '#1D263F';
-    document.getElementById('imgMeme').style.backgroundColor = '#000';
-    }else{
-        location.reload() //tengo que buscar otra solucion
-    }
-})
-
-
-
-
-/*
-const jonh = 'El mejor profe del mundo';
-const teQuieroMucho = () => {
-    console.log('Muchas Gracias')};
-console.log(`Para ${jonh}: Vos me motivas 
-            a dar lo mejor de mi`);
-while(true) teQuieroMucho()          //Naty
-*/
+        document.querySelector('#Label1').innerText = 'Modo Claro';
+        document.body.classList.toggle('dark');
+        if(claroOscuro.checked){
+            modoOscuroPosta();
+        } 
+        else{
+            restablecerModo();
+        } 
+    })

@@ -15,9 +15,8 @@
                 <li id="lista-imagen">Imagen</li>
                 <li id="lista-texto">Texto</li>
                 <li>   
-                    <label for=claroOscuro">Modo oscuro
-                        <input type="checkbox" id="claroOscuro">
-                    </label>
+                    <label id="Label1" for="claroOscuro">Modo oscuro</label>
+                    <input type="checkbox" id="claroOscuro">
                 </li>
             </ul>
         </nav>
@@ -37,17 +36,20 @@
                 <p id="bottonText" class="topbotText">BOTTOM TEXT</p> <!--class="bottomText"-->
             </article>
         </section>
+        <button class="download">Descargar meme</button>
 
-            <button class="download">Descargar meme</button>
+<!--\\\\\\\\\\\\\\\\*********************************************************************/////////////////-->
+<!--\\\\\\\\\\\\\\\\*****************************   ASIDE  ******************************/////////////////-->
+<!--\\\\\\\\\\\\\\\\*********************************************************************/////////////////-->
 
         <aside class="aside" id="aside">
-            <div id="contenedor-texto" hidden="">
+            <!-- <div id="contenedor-texto" hidden=""> -->
                 <!-- class="oculto"> -->
 
 
 <!-- *******************FORMULARIO DE TEXTO*********************  -->
 
-            <form id="form-texto" class="class-form-txt">
+            <form id="form-texto" class="class-form-txt" style="display: none;">
                 <h2 class="title-aside">Texto</h2>
                 <!-- <div> -->
                     <label for="top-input">Superior</label>
@@ -56,7 +58,6 @@
                         id="top-input" 
                         cols="35" 
                         rows="3" 
-                        
                         wrap="hard"
                         spellcheck="true">
                     </textarea>
@@ -84,7 +85,7 @@
                     <input id="bot-check" type="checkbox">
                     <label for="bot-check">Sin texto Inferior</label>
                 </div>
-                    <div>
+                <div>
                     <label for="option">Fuente</label>
                     <select name="option" id="option">
                         <option value="select">Seleccionar</option>
@@ -110,13 +111,13 @@
                     <button><img src="./img/iconos/Text-align-right-32.png" alt=""></button> -->
                 </div>
                 <div>
-                    <label for="color">Color</label>
-                    <input type="color" id="color" value="#000000">
-                    <span id="hex-color-texto">#000000</span>
+                    <label for="color">Color de Fuente</label>
+                        <input type="color" id="color" value="#000000">
+                        <span id="hex-color-texto">#000000</span><br>
 
-                    <label for="color">Fondo</label>
-                    <input type="color" id="fondo" value="#ffffff">
-                    <span id="hex-color-fondo">#ffffff</span>
+                    <label for="color">Color de Fondo</label>
+                    <input type="color" id="fondo" value="#FCF3B5">
+                    <span id="hex-color-fondo">#FCF3B5</span>
                 </div>
                 <div>
                     <input type="checkbox" id="transparente">
@@ -129,7 +130,7 @@
                     <button id="contornoClaro">Claro</button>
                     <button id="contornoOscuro">Oscuro</button>
                 </div>
-                <div>
+                <div class="div-fondo">
                     <label for="espaciado">Espaciado</label>
                     <input type="number" id="espaciado" value="2" min="0" max="20">
 
@@ -149,13 +150,13 @@
 <!-- Formulario de imagen -->
 
             <form id="form-imagen" class="class-form-img">
-                <h2>Imagen</h2>
+                <h2 class="title-aside">Imagen</h2>
 
                 <label for="url">URL</label>
                 <input type="url" id="url" value="">
 
                 <!-- <input type="file" > -->
-                <div>
+                <div class="div-fondo">
                     <label for="fondo-imgMene">Fondo</label>
                     <input type="color" id="fondo-imgMeme">
                     <label for="efecto">Efecto</label>
@@ -204,9 +205,9 @@
     </main>
     
 
-    <footer id="footer">
+    <!-- <footer class="footer">
         Hecho con 💖 por Naty
-    </footer>
+    </footer> -->
 
     <script src="main.js"></script>
 
