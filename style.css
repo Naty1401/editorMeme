@@ -271,6 +271,7 @@ body.dark{
         width: 100%;
         padding: 30px 20px;
         position: absolute;
+        z-index: 3;
     }
 
 .container{
