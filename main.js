@@ -4,17 +4,24 @@ const listaTexto = document.getElementById('lista-texto'); //Encabezado texto
 const formImagen = document.getElementById('form-imagen'); //formulario imagen
 const contenedorTexto = document.getElementById('contenedor-texto'); //borrar
 const claroOscuro = document.getElementById('claroOscuro') //Encabezado modo oscuro
+const aside = document.getElementById('aside')
+
+const responsive = () => {
+    (window.screen.width <= 700) ? aside.classList.add('responsive') : aside.classList.remove('responsive');
+}
 
 listaTexto.addEventListener('click',()=> {
     formImagen.style.display = 'none'
     //contenedorTexto.style.display = 'flex'
     formTexto.style.display = 'block'
+    responsive();
 })
 
 listaImagen.addEventListener('click', () =>{
     //contenedorTexto.style.display = 'none';
     formImagen.style.display = 'flex';
     formTexto.style.display = 'none'
+    responsive();
 })
 
 //////////////////////////  ^^^^^^^^^^^^^^^^  \\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -313,6 +320,7 @@ claroOscuro.addEventListener('click',() => {
             modoOscuroPosta();
         } 
         else{
+            document.querySelector('#Label1').innerText = 'Modo Oscuro';
             restablecerModo();
         } 
     })

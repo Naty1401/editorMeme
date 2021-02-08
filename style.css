@@ -63,6 +63,7 @@ li:hover{
     background-color: #fff;
     color: blueviolet;
     border-radius: 5px;
+    filter: brightness(110%);
 }
 
 li:focus{
@@ -263,6 +264,13 @@ body.dark{
 @media(max-width: 500px){
     .aside{
         display: none;
+    }
+
+    .responsive{
+        display: block;
+        width: 100%;
+        padding: 30px 20px;
+        position: absolute;
     }
 
 .container{
