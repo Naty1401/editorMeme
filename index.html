@@ -9,6 +9,8 @@
 </head>
 <body>
     <header class="header" id="header">
+        <!-- <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" hidden>✖</label> -->
         <h1>Editor de Memes</h1>
         <nav>
             <ul>
@@ -24,6 +26,7 @@
 
     <main>
         <section class="container">
+            <div id="meme-completo">
             <article >
                 <p id="topText" class="topbotText" >TOP TEXT</p> <!--class="topText"-->
             </article>
@@ -35,8 +38,9 @@
             <article>
                 <p id="bottonText" class="topbotText">BOTTOM TEXT</p> <!--class="bottomText"-->
             </article>
+            </div>
         </section>
-        <button class="download">Descargar meme</button>
+        <button class="download" id="download">Descargar meme</button>
 
 <!--\\\\\\\\\\\\\\\\*********************************************************************/////////////////-->
 <!--\\\\\\\\\\\\\\\\*****************************   ASIDE  ******************************/////////////////-->
@@ -45,7 +49,7 @@
         <aside class="aside" id="aside">
             <!-- <div id="contenedor-texto" hidden=""> -->
                 <!-- class="oculto"> -->
-
+                <button id="btn-menu" hidden>✖</button> 
 
 <!-- *******************FORMULARIO DE TEXTO*********************  -->
 
@@ -210,6 +214,9 @@
     </footer> -->
 
     <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js" integrity="sha512-wUa0ktp10dgVVhWdRVfcUO4vHS0ryT42WOEcXjVVF2+2rcYBKTY7Yx7JCEzjWgPV+rj2EDUr8TwsoWF6IoIOPg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
 
 </body>
 </html>

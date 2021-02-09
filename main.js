@@ -24,6 +24,13 @@ listaImagen.addEventListener('click', () =>{
     responsive();
 })
 
+const btnMenu = document.getElementById('btn-menu');
+btnMenu.addEventListener('click', ()=>{
+    // (btnMenu.checked) ? aside.style.display = ('none') : aside.style.display = ('block');
+    //aside.style.display = ('none')
+    //aside.classList.add('aside')
+})
+
 //////////////////////////  ^^^^^^^^^^^^^^^^  \\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////<<<<<<<<<<   FORMULARIO TEXTO  >>>>>>>>>>\\\\\\\\\\\\\\\\\
 //////////////////////////  ****************  \\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -98,8 +105,7 @@ const buttonRight = document.getElementById('buttonRight');
 
 buttonLeft.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(e.target)
-    
+    console.log(e.target)    
     topText.style.textAlign = 'left'
     bottonText.style.textAlign = 'left'
 })
@@ -324,3 +330,20 @@ claroOscuro.addEventListener('click',() => {
             restablecerModo();
         } 
     })
+
+
+    //////////////////////////////////////////////////////////boton de descarga
+    const download = document.getElementById('download');
+    //const container = document.getElementById('container');
+    const memeCompleto = document.getElementById('meme-completo');
+
+    download.addEventListener('click', () => {
+        descargarImagen();
+    })
+
+    const descargarImagen = () => {
+        domtoimage.toBlob(memeCompleto)
+        .then(function (blob) {
+            saveAs(blob, 'meme.png');
+        });
+    }
