@@ -147,10 +147,11 @@ fondo.addEventListener('input', (e) => {
 //////////////////////////////////////////////////////////////////Fondo transparente
 
 transparente.addEventListener('click', () => {
+    imgMeme.classList.toggle('imgMemeTransparente')
     if(transparente.checked){
-        imgMeme.style.height = '70vh';
+    /*    imgMeme.style.height = '70vh';
         imgMeme.style.position = 'absolute';
-        imgMeme.style.zIndex = '1'
+        imgMeme.style.zIndex = '1'*/
         bottonText.style.backgroundColor = 'transparent';
         bottonText.style.zIndex = '2'
         topText.style.backgroundColor = 'transparent';
@@ -158,9 +159,13 @@ transparente.addEventListener('click', () => {
         topText.style.marginBottom = '50vh'
     }
     else {
-        alert('No esta hecho')
+        bottonText.style.backgroundColor = `${fondo.value}`;
+        topText.style.backgroundColor = `${fondo.value}`;
+        topText.style.marginBottom = '0'
     }
+
 })
+
 
 ///////////////////////////////////////////////////////////////////////Contornos
 
@@ -283,28 +288,6 @@ negativo.addEventListener('change', filtro);
 
 /////////////////////////////////////////////////////Modo claro/oscuro
 
-// claroOscuro.addEventListener('click',() => {    
-//     document.querySelector('#Label1').innerText = 'Modo Claro';
-//     document.body.classList.toggle('dark');
-//     if(claroOscuro.checked){ 
-//     document.getElementsByClassName("container")[0].style.backgroundColor = '#30343F';
-//     document.getElementById('topText').style.backgroundColor = '#1D263F';
-//     document.getElementById('bottonText').style.backgroundColor = '#1D263F';
-//     document.getElementById("aside").style.backgroundColor = "#232A35";
-//     document.getElementById("header").style.backgroundColor = "#1C293F";
-//     document.getElementById("footer").style.backgroundColor = "#52517C";
-//     document.getElementById('imgMeme').style.backgroundColor = '#000';
-//     }else{
-//         alert('Se perderán los datos ingresados')
-//         location.reload() //tengo que buscar una mejor solucion
-//     }
-// })
-
-// claroOscuro.addEventListener('click',() => {    
-//     document.querySelector('#Label1').innerText = 'Modo Claro';
-//     document.body.classList.toggle('dark');
-// })
-
 function modoOscuroPosta(){
     document.documentElement.style.setProperty('--amarillo', '#1D263F');
     document.documentElement.style.setProperty('--anaranjado', '#30343F');
@@ -332,7 +315,7 @@ claroOscuro.addEventListener('click',() => {
     })
 
 
-    //////////////////////////////////////////////////////////boton de descarga
+    //////////////////////////////////////////////////////////botón de descarga
     const download = document.getElementById('download');
     //const container = document.getElementById('container');
     const memeCompleto = document.getElementById('meme-completo');
