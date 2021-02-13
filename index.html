@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" id="temas">
-    <!-- <link rel="stylesheet" href="./css/dark.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <title>Editor de memes</title>
 </head>
 <body>
@@ -30,17 +32,14 @@
                 <article >
                     <p id="topText" class="topbotText" >TOP TEXT</p> <!--class="topText"-->
                 </article>
-                <article class="imgMeme" id="imgMeme">
-                
-                    <p id="alegria">Debe ingresar una url desde el menú imagen</p>
-                </article>
+                <article class="imgMeme" id="imgMeme"></article>
             
                 <article>
                     <p id="bottonText" class="topbotText">BOTTOM TEXT</p> <!--class="bottomText"-->
                 </article>
             </div>
+            <button class="download" id="download">Descargar meme</button>
         </section>
-        <button class="download" id="download">Descargar meme</button>
 
 <!--\\\\\\\\\\\\\\\\*********************************************************************/////////////////-->
 <!--\\\\\\\\\\\\\\\\*****************************   ASIDE  ******************************/////////////////-->
@@ -54,16 +53,17 @@
 <!-- *******************FORMULARIO DE TEXTO*********************  -->
 
             <form id="form-texto" class="class-form-txt" style="display: none;">
-                <h2 class="title-aside">Texto</h2>
+                <h2 class="title-aside">TEXTO</h2>
                 <!-- <div> -->
                     <label for="top-input">Superior</label>
                     <textarea 
                         name="text" 
                         id="top-input" 
                         cols="35" 
-                        rows="3" 
+                        rows="2" 
                         wrap="hard"
-                        spellcheck="true">
+                        spellcheck="true"
+                        style="resize: none;">
                     </textarea>
                     <!-- <input type="text" id="top-input" value="Top text"> -->
                 <!-- </div> -->
@@ -79,8 +79,7 @@
                         name="text" 
                         id="bot-input" 
                         cols="35" 
-                        rows="3" 
-
+                        rows="2"
                         wrap="hard"
                         spellcheck="true">
                     </textarea>
@@ -130,9 +129,9 @@
 
                 <div>
                     <label>Contorno</label>
-                    <button id="contornoNinguno">Ninguno</button>
-                    <button id="contornoClaro">Claro</button>
-                    <button id="contornoOscuro">Oscuro</button>
+                    <button id="contornoNinguno" class="form-text-button">Ninguno</button>
+                    <button id="contornoClaro" class="form-text-button">Claro</button>
+                    <button id="contornoOscuro" class="form-text-button">Oscuro</button>
                 </div>
                 <div class="div-fondo">
                     <label for="espaciado">Espaciado</label>
@@ -154,7 +153,7 @@
 <!-- Formulario de imagen -->
 
             <form id="form-imagen" class="class-form-img">
-                <h2 class="title-aside">Imagen</h2>
+                <h2 class="title-aside">IMAGEN</h2>
 
                 <label for="url">URL</label>
                 <input type="url" id="url" value="">

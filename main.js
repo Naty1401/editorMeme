@@ -12,23 +12,14 @@ const responsive = () => {
 
 listaTexto.addEventListener('click',()=> {
     formImagen.style.display = 'none'
-    //contenedorTexto.style.display = 'flex'
     formTexto.style.display = 'block'
     responsive();
 })
 
 listaImagen.addEventListener('click', () =>{
-    //contenedorTexto.style.display = 'none';
     formImagen.style.display = 'flex';
     formTexto.style.display = 'none'
     responsive();
-})
-
-const btnMenu = document.getElementById('btn-menu');
-btnMenu.addEventListener('click', ()=>{
-    // (btnMenu.checked) ? aside.style.display = ('none') : aside.style.display = ('block');
-    //aside.style.display = ('none')
-    //aside.classList.add('aside')
 })
 
 //////////////////////////  ^^^^^^^^^^^^^^^^  \\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -73,7 +64,8 @@ botCheck.addEventListener('click', () => {
     verificarCheck();
 })
 
-////////////////////////////////////////////////////FONT-FAMILY
+////////////////////////////////////////////////////////////////////////////////////////Font-Family
+
 const option = document.getElementById('option');
 
 option.addEventListener('change', () => {
@@ -81,49 +73,46 @@ option.addEventListener('change', () => {
     bottonText.style.fontFamily = `${option.value}`;
 });
 
-//////////////////////////////////////////////////////FONT-SIZE
+//////////////////////////////////////////////////////////////////////////////////////////Font-Size
+
 const size = document.getElementById('size');
 
 size.addEventListener('keyup', () =>{
     topText.style.fontSize = `${size.value}px`;
+    bottonText.style.fontSize = `${size.value}px`;
 })
 size.addEventListener('click', () =>{
     topText.style.fontSize = `${size.value}px`;
-})
-size.addEventListener('keyup', () =>{
-    bottonText.style.fontSize = `${size.value}px`;
-})
-size.addEventListener('click', () =>{
     bottonText.style.fontSize = `${size.value}px`;
 })
 
-////////////////////////////////////////////////////////ALIGN
+/////////////////////////////////////////////////////////////////////////////////////////////Align
 
 const buttonLeft = document.getElementById('buttonLeft');
 const buttonCenter = document.getElementById('buttonCenter');
 const buttonRight = document.getElementById('buttonRight');
 
-buttonLeft.addEventListener('click', (e) => {
+const alinearTexto = (sentido) => {    
+    bottonText.style.textAlign = sentido
+    topText.style.textAlign = sentido
+}
+
+buttonLeft.addEventListener('click', (e) =>{
     e.preventDefault();
-    console.log(e.target)    
-    topText.style.textAlign = 'left'
-    bottonText.style.textAlign = 'left'
+    alinearTexto('left');
 })
 
 buttonCenter.addEventListener('click', (e) => {
     e.preventDefault();
-    bottonText.style.textAlign = 'center'
-    topText.style.textAlign = 'center'
+    alinearTexto('center');
 })
 
 buttonRight.addEventListener('click', (e) => {
-    console.log(e.target)
     e.preventDefault();
-    bottonText.style.textAlign = 'right'
-    topText.style.textAlign = 'right'
+    alinearTexto('right')
 })
 
-////////////////////////////////////////////////////////////////////////COLORES
+////////////////////////////////////////////////////////////////////////////////////////////Colores
 
 const color = document.getElementById('color');
 const fondo = document.getElementById('fondo');
@@ -144,14 +133,11 @@ fondo.addEventListener('input', (e) => {
     bottonText.style.backgroundColor = colorFondo;
     hexColorFondo.innerHTML = colorFondo.toUpperCase();
 })
-//////////////////////////////////////////////////////////////////Fondo transparente
+/////////////////////////////////////////////////////////////////////////////////Fondo transparente
 
 transparente.addEventListener('click', () => {
     imgMeme.classList.toggle('imgMemeTransparente')
     if(transparente.checked){
-    /*    imgMeme.style.height = '70vh';
-        imgMeme.style.position = 'absolute';
-        imgMeme.style.zIndex = '1'*/
         bottonText.style.backgroundColor = 'transparent';
         bottonText.style.zIndex = '2'
         topText.style.backgroundColor = 'transparent';
@@ -159,15 +145,14 @@ transparente.addEventListener('click', () => {
         topText.style.marginBottom = '50vh'
     }
     else {
-        bottonText.style.backgroundColor = `${fondo.value}`;
-        topText.style.backgroundColor = `${fondo.value}`;
+        bottonText.style.backgroundColor = fondo.value;
+        topText.style.backgroundColor = fondo.value;
         topText.style.marginBottom = '0'
     }
 
 })
 
-
-///////////////////////////////////////////////////////////////////////Contornos
+/////////////////////////////////////////////////////////////////////////////////////////Contornos
 
 const contornoNinguno = document.getElementById('contornoNinguno');
 const contornoClaro = document.getElementById('contornoClaro');
@@ -197,7 +182,7 @@ contornoOscuro.addEventListener('click', (e) => {
 })
 
 
-///////////////////////////////////////////////////////////////////espaciado e interlineado
+//////////////////////////////////////////////////////////////////////////espaciado e interlineado
 
 const espaciado = document.getElementById('espaciado');
 const interlineado = document.getElementById('interlineado');
@@ -219,17 +204,12 @@ interlineado.addEventListener('change', () => {
 
 
 const urlImg = document.getElementById('url');
-const alegria = document.getElementById('alegria');
+const texto = document.getElementById('alegria');
 
 urlImg.addEventListener('keyup', () => {
-    const src = urlImg.value;
-    // console.log(e.target.value);
+    const src = urlImg.value;  
     imgMeme.style.backgroundImage = `url('${src}')`;
-    imgMeme.style.backgroundSize = 'cover';
-    imgMeme.style.backgroundRepeat = 'no-repeat';
-    imgMeme.style.backgroundPosition = 'center';
-    console.log(src);
-    alegria.classList.add('oculto')
+    imgMeme.classList.add('imgMemeForm');
 })
 
 const fondoImgMeme = document.getElementById('fondo-imgMeme');
@@ -245,7 +225,7 @@ efecto.addEventListener('change', () => {
     imgMeme.style.backgroundBlendMode = efecto.value;
 })
 
-//////////////////////////////////////////////////////////Filtros
+///////////////////////////////////////////////////////////////////////////////////////////Filtros
 
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
@@ -262,6 +242,16 @@ const filtro = () => {
     imgMeme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${escala.value}%) sepia(${sepia.value}%) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})` 
 };
 
+brillo.addEventListener('change', filtro);
+opacidad.addEventListener('change', filtro);
+contraste.addEventListener('change', filtro);
+desenfoque.addEventListener('change', filtro);
+escala.addEventListener('change', filtro);
+sepia.addEventListener('change', filtro);
+hue.addEventListener('change', filtro);
+saturado.addEventListener('change', filtro);
+negativo.addEventListener('change', filtro);
+
 botonReset.addEventListener('click', (e) => {
     e.preventDefault()
     brillo.value = 1;
@@ -276,19 +266,10 @@ botonReset.addEventListener('click', (e) => {
     filtro();
 })
 
-brillo.addEventListener('change', filtro);
-opacidad.addEventListener('change', filtro);
-contraste.addEventListener('change', filtro);
-desenfoque.addEventListener('change', filtro);
-escala.addEventListener('change', filtro);
-sepia.addEventListener('change', filtro);
-hue.addEventListener('change', filtro);
-saturado.addEventListener('change', filtro);
-negativo.addEventListener('change', filtro);
 
-/////////////////////////////////////////////////////Modo claro/oscuro
+/////////////////////////////////////////////////////////////////////////////////Modo claro/oscuro
 
-function modoOscuroPosta(){
+function modoOscuro(){
     document.documentElement.style.setProperty('--amarillo', '#1D263F');
     document.documentElement.style.setProperty('--anaranjado', '#30343F');
     document.documentElement.style.setProperty('--vino', '#1C293F');
@@ -306,7 +287,7 @@ claroOscuro.addEventListener('click',() => {
         document.querySelector('#Label1').innerText = 'Modo Claro';
         document.body.classList.toggle('dark');
         if(claroOscuro.checked){
-            modoOscuroPosta();
+            modoOscuro();
         } 
         else{
             document.querySelector('#Label1').innerText = 'Modo Oscuro';
@@ -314,10 +295,8 @@ claroOscuro.addEventListener('click',() => {
         } 
     })
 
-
-    //////////////////////////////////////////////////////////botón de descarga
+    /////////////////////////////////////////////////////////////////////////////botón de descarga
     const download = document.getElementById('download');
-    //const container = document.getElementById('container');
     const memeCompleto = document.getElementById('meme-completo');
 
     download.addEventListener('click', () => {
@@ -330,3 +309,14 @@ claroOscuro.addEventListener('click',() => {
             saveAs(blob, 'meme.png');
         });
     }
+
+
+// Cruz del aside en resposivo
+/*    
+const btnMenu = document.getElementById('btn-menu');
+btnMenu.addEventListener('click', ()=>{
+    // (btnMenu.checked) ? aside.style.display = ('none') : aside.style.display = ('block');
+    //aside.style.display = ('none')
+    //aside.classList.add('aside')
+})*/
+
