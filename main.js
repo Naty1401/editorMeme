@@ -7,7 +7,7 @@ const claroOscuro = document.getElementById('claroOscuro') //Encabezado modo osc
 const aside = document.getElementById('aside')
 
 const responsive = () => {
-    (window.screen.width <= 700) ? aside.classList.add('responsive') : aside.classList.remove('responsive');
+    (window.screen.width <= 700) ? aside.classList.toggle('responsive') : aside.classList.remove('responsive');
 }
 
 listaTexto.addEventListener('click',()=> {
@@ -49,7 +49,8 @@ const verificarCheck = () => {
     else if(topCheck.checked || botCheck.checked){
         imgMeme.style.height = '60vh'
     }
-    else{
+    
+    else if(!topCheck.checked && !botCheck.checked){
         imgMeme.style.height = '50vh'
     }
 }
