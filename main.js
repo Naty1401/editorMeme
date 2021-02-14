@@ -48,11 +48,11 @@ const verificarCheck = () => {
     }
     else if(topCheck.checked || botCheck.checked){
         imgMeme.style.height = '60vh'
+    }    
+    else if(!topCheck.checked && !botCheck.checked){
+        imgMeme.style.height = '50vh'        
     }
     
-    else if(!topCheck.checked && !botCheck.checked){
-        imgMeme.style.height = '50vh'
-    }
 }
 
 topCheck.addEventListener('click', () => {

@@ -216,7 +216,7 @@ input, select, textarea{
 
 .div-fondo{
     background-color: var(--vino);
-    
+    margin: 4% 0;
     width: 90%;
 }
 
